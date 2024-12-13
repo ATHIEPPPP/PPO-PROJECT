@@ -60,29 +60,10 @@ Gbest = 0
 Pbesti = []
 
 # Fungsi untuk mencari Gbest dengan membandingkan semua fungsi(x) lalu mengambil nilai x dari fungsi yangmenghasilkan nilai paling kecil
-def x_minimum(x1,x2,x3,x4,x5,x6,x7,x8,x9,x10):
+def x_minimum(*args):
     global Gbest
-    if func(x1)<=func(x2) and func(x1)<=func(x3) and func(x1)<=func(x4) and func(x1)<=func(x5) and func(x1)<=func(x6) and func(x1)<=func(x7) and func(x1)<=func(x8) and func(x1)<=func(x9) and func(x1)<=func(x10) :
-        Gbest = x1
-    elif func(x2)<=func(x1) and func(x2)<=func(x3) and func(x2)<=func(x4) and func(x2)<=func(x5) and func(x2)<=func(x6) and func(x2)<=func(x7) and func(x2)<=func(x8) and func(x2)<=func(x9) and func(x2)<=func(x10) :
-        Gbest = x2
-    elif func(x3)<=func(x1) and func(x3)<=func(x2) and func(x3)<=func(x4) and func(x3)<=func(x5) and func(x3)<=func(x6) and func(x3)<=func(x7) and func(x3)<=func(x8) and func(x3)<=func(x9) and func(x3)<=func(x10) :
-        Gbest = x3
-    elif func(x4)<=func(x1) and func(x4)<=func(x2) and func(x4)<=func(x3) and func(x4)<=func(x5) and func(x4)<=func(x6) and func(x4)<=func(x7) and func(x4)<=func(x8) and func(x4)<=func(x9) and func(x4)<=func(x10) :
-        Gbest = x4
-    elif func(x5)<=func(x1) and func(x5)<=func(x2) and func(x5)<=func(x4) and func(x5)<=func(x3) and func(x5)<=func(x6) and func(x5)<=func(x7) and func(x5)<=func(x8) and func(x5)<=func(x9) and func(x5)<=func(x10) :
-        Gbest = x5
-    elif func(x6)<=func(x1) and func(x6)<=func(x2) and func(x6)<=func(x4) and func(x6)<=func(x5) and func(x6)<=func(x3) and func(x6)<=func(x7) and func(x6)<=func(x8) and func(x6)<=func(x9) and func(x6)<=func(x10) :
-        Gbest = x6
-    elif func(x7)<=func(x1) and func(x7)<=func(x2) and func(x7)<=func(x4) and func(x7)<=func(x5) and func(x7)<=func(x6) and func(x7)<=func(x3) and func(x7)<=func(x8) and func(x7)<=func(x9) and func(x7)<=func(x10) :
-        Gbest = x7
-    elif func(x8)<=func(x1) and func(x8)<=func(x2) and func(x8)<=func(x4) and func(x8)<=func(x5) and func(x8)<=func(x6) and func(x8)<=func(x7) and func(x8)<=func(x3) and func(x8)<=func(x9) and func(x8)<=func(x10) :
-        Gbest = x8
-    elif func(x9)<=func(x1) and func(x9)<=func(x2) and func(x9)<=func(x4) and func(x9)<=func(x5) and func(x9)<=func(x6) and func(x9)<=func(x7) and func(x9)<=func(x8) and func(x9)<=func(x3) and func(x9)<=func(x10) :
-        Gbest = x9
-    elif func(x10)<=func(x1) and func(x10)<=func(x2) and func(x10)<=func(x4) and func(x10)<=func(x5) and func(x10)<=func(x6) and func(x10)<=func(x7) and func(x10)<=func(x8) and func(x10)<=func(x9) and func(x10)<=func(x3) :
-        Gbest = x10
-
+    Gbest = min(args, key=func)
+    
 # Fungsi untuk yang akan mengambil langsung nilai xi dan menympannya kedalam array Pbesti jika sedang dalam iterasi pertama
 def fx_minimum_iterasi1(x1,x2,x3,x4,x5,x6,x7,x8,x9,x10):
     Pbesti.append(x1)
